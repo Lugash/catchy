@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+
+        <title>Catchy</title>
+
+        <style>
+            body {
+                background-color: #222;
+                position: relative;
+                
+                background: rgba(0,0,0,.8);
+
+                color: #ddd;
+                font-family: sans-serif;
+            }
+            body::before {
+                position: absolute;
+                content: "";
+                background: url('./resources/bcg.png') repeat;
+                background-size: 50px;
+                opacity: .1;
+                z-index: -1;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+
+            h1 {
+                font-family: 'Brown Fox', sans-serif;
+                font-weight: bold;
+                letter-spacing: 4px;
+                color: #fff;
+                text-align: center;
+                text-shadow: 0 0 2px rgba( 0, 0, 0, 0.8 );
+                text-transform: uppercase;
+            }
+
+            .red {
+                color: rgb(240, 0, 0);
+            }
+            .italic {
+                font-style: italic;
+            }
+
+            canvas {
+                display: block;
+                margin: 20px auto;
+                border: 1px solid rgba( 0, 50, 100, 0.4 );
+                box-shadow: 0 0 20px 0 rgba( 0, 0, 0, 0.4 );
+            }
+
+            small {
+                display: block;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            <span class="red">Catch</span> the Flapp<span class="red">y</span>
+        </h1>
+        <h2>
+            Instructions:    
+        </h2>
+        <p>
+            Attrappez ce maudit Flappy, il essaye sans cesse de vous échapper!
+        </p>
+        <p>
+            Pressez sur <strong>espace</strong> ou <strong>clickez</strong> au bon moment afin de l'enfemer dans la cage.
+        </p>
+        <ul>
+            <li>
+                Si vous clickez trop tôt ou trop tard, perdu. 
+                <!-- <span class="italic">score-</span> -->
+            </li>
+            <li>
+                Si vous clickez au bon moment, au autre Flappy reviendra, plus rapide que l'autre. 
+                <span class="italic">score+</span>
+            </li>
+        </ul>
+
+        <canvas id="game" width="500" height="500"></canvas>
+
+        <small>
+            Pour rejouer, suffit de presser espace ou clicker.
+        </small>
+
+        <script src="bin/app.min.js"></script>
+    </body>
+</html>
